@@ -2,6 +2,7 @@ package com.observepoint.test.test.service;
 
 import com.observepoint.test.test.model.Departments;
 import com.observepoint.test.test.repository.DepartmentRepository;
+import com.observepoint.test.test.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +15,11 @@ import java.util.List;
 @Service
 public class DepartmentService {
 
-    @Autowired
-    DepartmentRepository departmentRepository;
+    private DepartmentRepository departmentRepository;
 
+    public DepartmentService(DepartmentRepository departmentRepository) {
+        this.departmentRepository = departmentRepository;
+    }
     public List<Departments> getAllDepartments()
     {
         List<Departments> departmentsList = new ArrayList<Departments>();

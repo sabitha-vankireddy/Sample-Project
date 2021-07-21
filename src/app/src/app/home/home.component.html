@@ -1,7 +1,46 @@
 <h2>Tasks:</h2>
 <div class="launch-task">
-  <button mat-raised-button color="primary">Manage Employees</button>
+  <button mat-raised-button color="primary" type="submit" routerLink="/home">Manage Employees</button>
 </div>
 <div class="launch-task">
-  <button mat-raised-button color="primary">Department Reports</button>
+  <button mat-raised-button color="primary" type="submit" routerLink="/home">Department Reports</button>
 </div>
+
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Emp ID</th>
+        <th scope="col">EMP Name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let e of employees">
+        <td>{{ e.empid }}</td>
+        <td>{{ e.empname }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Dep ID</th>
+        <th scope="col">Dep Name</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let d of departments">
+        <td>{{ d.depid }}</td>
+        <td>{{ d.depname }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
